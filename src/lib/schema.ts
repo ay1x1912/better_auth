@@ -1,7 +1,7 @@
 import {z}  from 'zod'
 
 
-export const SignInSchem=z.object({
+export const SignInSchema=z.object({
     email:z.string().email(),
     password:z.string().min(6,{message:"Password contain at least 6 character(s)"})
 
@@ -11,3 +11,7 @@ export const SignUpSchema=z.object({
     email:z.string().email(),
     password:z.string().min(6,{message:"Password contain at least 6 character(s)"})
 }) 
+export const SigninSchema=SignUpSchema.pick({
+    email:true,
+    password:true
+})

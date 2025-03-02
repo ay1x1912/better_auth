@@ -15,10 +15,10 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
  
-import { SignInSchem } from '@/lib/schema'
+import {  SigninSchema } from '@/lib/schema'
 function SignInForm() {
-    const form = useForm<z.infer<typeof SignInSchem>>({
-        resolver: zodResolver(SignInSchem),
+    const form = useForm<z.infer<typeof SigninSchema>>({
+        resolver: zodResolver(SigninSchema),
         defaultValues: {
           email:"",
           password:""
@@ -26,7 +26,7 @@ function SignInForm() {
       })
      
      
-      function onSubmit(values: z.infer<typeof SignInSchem>) {
+      function onSubmit(values: z.infer<typeof SigninSchema>) {
         
         console.log(values)
       }
